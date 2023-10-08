@@ -5,14 +5,14 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import at.interview.ohanaassignment.usage.domain.UsageViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun UsedDevicesDropDownMenu(modifier: Modifier = Modifier) {
 
-    //TODO use Hilt
-    val viewModel = UsageViewModel()
+    val viewModel = hiltViewModel<UsageViewModel>()
     val usedDevices = viewModel.usedDevices
     var expanded by remember { mutableStateOf(false) }
     var selectedOptionText by remember { mutableStateOf(usedDevices[0]) }
