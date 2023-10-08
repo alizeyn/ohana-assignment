@@ -5,9 +5,11 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Card
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -37,24 +39,50 @@ fun UsageByCategory(modifier: Modifier = Modifier) {
             usages = viewModel.usageByCategory.map { it.toUsage() }
         )
 
-        LazyColumn(
-            verticalArrangement = Arrangement.spacedBy(8.dp)
-        ) {
-            items(viewModel.usageByCategory) {
-                CategoryUsageItem(item = it)
-            }
+        CategoriesUsages()
+    }
+}
+
+@Composable
+fun CategoriesUsages(modifier: Modifier = Modifier, numberOfItemsWhenCollapsed: Int = 5) {
+    //TODO initiate by hilt
+    val viewModel = UsageViewModel()
+
+    val showAll = remember { mutableStateOf(false) }
+
+    val categories = viewModel.usageByCategory
+    val listToShow = if (showAll.value || categories.size <= numberOfItemsWhenCollapsed) categories else categories.take(numberOfItemsWhenCollapsed)
+
+    LazyColumn(
+        modifier = modifier,
+        verticalArrangement = Arrangement.spacedBy(2.dp),
+    ) {
+        items(listToShow) {
+            CategoryUsageItem(item = it)
         }
 
+        if (categories.size > numberOfItemsWhenCollapsed) {
+            if (!showAll.value) {
+                item {
+                    TextButton(onClick = { showAll.value = true }) {
+                        Text("Show all categories")
+                    }
+                }
+            } else {
+                item {
+                    TextButton(onClick = { showAll.value = false }) {
+                        Text("Show less")
+                    }
+                }
+            }
+        }
     }
 }
 
 @Composable
 fun CategoryUsageItem(modifier: Modifier = Modifier, item: CategoryUsage) {
-    Card(
-        modifier = modifier
-            .fillMaxWidth()
-            .clip(RoundedCornerShape(16.dp))
-    ) {
+
+    Box(modifier = modifier) {
         Row(modifier = Modifier.padding(16.dp)) {
 
             CategoryColorIcon(

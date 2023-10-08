@@ -1,5 +1,6 @@
 package at.interview.ohanaassignment.usage.ui.component
 
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -24,7 +25,9 @@ fun UsedDevicesDropDownMenu(modifier: Modifier = Modifier) {
         },
     ) {
         TextField(
-            modifier = modifier.menuAnchor(),
+            modifier = Modifier
+                .menuAnchor()
+                .fillMaxWidth(),
             readOnly = true,
             value = selectedOptionText.name,
             onValueChange = { },
