@@ -1,4 +1,4 @@
-package at.interview.ohanaassignment.usage.screen
+package at.interview.ohanaassignment.usage.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

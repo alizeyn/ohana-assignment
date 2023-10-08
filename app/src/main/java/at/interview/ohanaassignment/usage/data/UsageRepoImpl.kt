@@ -36,7 +36,7 @@ class UsageRepoImpl : UsageRepo {
         NetworkCategoryUsage(
             name = "Messaging",
             numberOfApps = 14,
-            usagePresent = 0.2f,
+            usagePresent = 0.02f,
             color = Color.Yellow,
         ),
         NetworkCategoryUsage(
@@ -47,4 +47,11 @@ class UsageRepoImpl : UsageRepo {
             color = Color.DarkGray
         ),
     ).map { it.toCategoryUsagePresent() }
+
+    override fun getDevices() = listOf(
+        NetworkDevice(name = "Pixel 8"),
+        NetworkDevice(name = "Pixel 6"),
+        NetworkDevice(name = "Pixel 2"),
+        NetworkDevice(name = "Pixel 4"),
+    ).map { it.toDevice() }
 }

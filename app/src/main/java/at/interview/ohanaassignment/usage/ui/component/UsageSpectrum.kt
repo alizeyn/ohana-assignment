@@ -1,4 +1,4 @@
-package at.interview.ohanaassignment.usage.screen
+package at.interview.ohanaassignment.usage.ui.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -8,7 +8,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import at.interview.ohanaassignment.usage.domain.Usage
@@ -21,7 +20,6 @@ fun UsageSpectrum(modifier: Modifier = Modifier, usages: List<Usage>) {
         modifier = modifier
             .fillMaxWidth()
             .height(16.dp)
-            .background(Color.LightGray)
             .clip(RoundedCornerShape(16.dp))
     ) {
         Row(
