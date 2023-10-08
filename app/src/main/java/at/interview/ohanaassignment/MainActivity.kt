@@ -4,21 +4,22 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
-import androidx.compose.material.icons.rounded.ArrowForward
-import androidx.compose.material3.*
+import androidx.compose.material.icons.rounded.KeyboardArrowLeft
+import androidx.compose.material.icons.rounded.KeyboardArrowRight
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import at.interview.ohanaassignment.ui.theme.OhanaAssignmentTheme
+import at.interview.ohanaassignment.usage.ui.component.RoundedCornerIconButton
 import at.interview.ohanaassignment.usage.ui.component.Separator
 import at.interview.ohanaassignment.usage.ui.screen.Usage
 
@@ -45,7 +46,10 @@ fun UsageTopBar(modifier: Modifier = Modifier) {
     ) {
         Column {
             MainAppBar()
-            WeekNavigationBar(modifier)
+            WeekNavigationBar(
+                modifier = modifier
+                    .padding(start = 16.dp, end = 16.dp, bottom = 16.dp)
+            )
             Separator()
         }
     }
@@ -77,16 +81,14 @@ fun MainAppBar() {
 @Composable
 fun WeekNavigationBar(modifier: Modifier = Modifier) {
     Row(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
 
         Box(
             modifier = Modifier.align(Alignment.CenterVertically)
         ) {
-            TextButton(onClick = { }) {
-                NavigateButton(icon = Icons.Rounded.ArrowBack)
-            }
+            RoundedCornerIconButton(icon = Icons.Rounded.KeyboardArrowLeft, onClick = { })
         }
 
         Box(
@@ -98,28 +100,7 @@ fun WeekNavigationBar(modifier: Modifier = Modifier) {
         Box(
             modifier = Modifier.align(Alignment.CenterVertically)
         ) {
-            TextButton(onClick = { }) {
-                NavigateButton(icon = Icons.Rounded.ArrowForward)
-            }
-        }
-    }
-}
-
-@Composable
-fun NavigateButton(
-    modifier: Modifier = Modifier,
-    icon: ImageVector
-) {
-    Card(
-        modifier = modifier
-            .border(1.dp, Color.DarkGray, RoundedCornerShape(4.dp))
-            .padding(8.dp)
-    ) {
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier.wrapContentHeight()
-        ) {
-            Icon(imageVector = icon, contentDescription = null)
+            RoundedCornerIconButton(icon = Icons.Rounded.KeyboardArrowRight, onClick = { })
         }
     }
 }
