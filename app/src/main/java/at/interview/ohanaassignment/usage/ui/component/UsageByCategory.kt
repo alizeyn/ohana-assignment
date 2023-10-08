@@ -49,24 +49,24 @@ fun UsageByCategory(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun CategoryUsageItem(item: CategoryUsage) {
+fun CategoryUsageItem(modifier: Modifier = Modifier, item: CategoryUsage) {
     Card(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(16.dp))
     ) {
-        Row(
-            modifier = Modifier
-                .padding(16.dp)
-        ) {
+        Row(modifier = Modifier.padding(16.dp)) {
 
-            CategoryColorIcon(color = item.color)
+            CategoryColorIcon(
+                modifier = Modifier.padding(top = 6.dp, end = 8.dp),
+                color = item.color
+            )
 
             Spacer(modifier = Modifier.size(4.dp))
 
             Column {
-                Text(text = item.name, fontSize = 14.sp, color = Color.Black)
-                Text(text = "${item.numberOfApps} Apps", fontSize = 8.sp, color = Color.DarkGray)
+                Text(text = item.name, fontSize = 16.sp, color = Color.Black)
+                Text(text = "${item.numberOfApps} Apps", fontSize = 12.sp, color = Color.DarkGray)
             }
 
             Spacer(modifier = Modifier.weight(1f))

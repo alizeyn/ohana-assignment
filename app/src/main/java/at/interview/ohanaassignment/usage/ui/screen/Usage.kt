@@ -1,4 +1,4 @@
-package at.interview.ohanaassignment.usage.ui
+package at.interview.ohanaassignment.usage.ui.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -40,7 +40,6 @@ fun Usage() {
         }
     )
 }
-
 
 @Preview(showBackground = true)
 @Composable

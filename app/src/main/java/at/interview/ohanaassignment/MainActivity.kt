@@ -19,8 +19,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import at.interview.ohanaassignment.ui.theme.OhanaAssignmentTheme
-import at.interview.ohanaassignment.usage.ui.Separator
-import at.interview.ohanaassignment.usage.ui.Usage
+import at.interview.ohanaassignment.usage.ui.component.Separator
+import at.interview.ohanaassignment.usage.ui.screen.Usage
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
