@@ -10,7 +10,7 @@ data class NetworkAppUsage(
 ) {
     fun toAppUsage() = AppUsage(
         name = name,
-        iconUrl = iconUrl,
+        logoUrl = iconUrl,
         usagePresent = usagePresent,
         duration = duration,
     )
