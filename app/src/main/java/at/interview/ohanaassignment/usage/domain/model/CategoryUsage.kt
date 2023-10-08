@@ -1,4 +1,4 @@
-package at.interview.ohanaassignment.usage.domain
+package at.interview.ohanaassignment.usage.domain.model
 
 import androidx.compose.ui.graphics.Color
 

@@ -1,7 +1,7 @@
 package at.interview.ohanaassignment.usage.domain.di
 
-import at.interview.ohanaassignment.usage.data.UsageRepo
-import at.interview.ohanaassignment.usage.data.UsageRepoImpl
+import at.interview.ohanaassignment.usage.data.repository.UsageRepo
+import at.interview.ohanaassignment.usage.data.repository.UsageRepoImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

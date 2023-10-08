@@ -1,7 +1,7 @@
-package at.interview.ohanaassignment.usage.data
+package at.interview.ohanaassignment.usage.data.model
 
 import androidx.compose.ui.graphics.Color
-import at.interview.ohanaassignment.usage.domain.CategoryUsage
+import at.interview.ohanaassignment.usage.domain.model.CategoryUsage
 
 data class NetworkCategoryUsage(
     val name: String,

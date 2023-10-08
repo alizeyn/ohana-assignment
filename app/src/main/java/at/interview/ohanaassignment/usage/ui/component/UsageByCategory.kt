@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import at.interview.ohanaassignment.ui.theme.Typography
-import at.interview.ohanaassignment.usage.domain.CategoryUsage
+import at.interview.ohanaassignment.usage.domain.model.CategoryUsage
 import at.interview.ohanaassignment.usage.domain.UsageViewModel
 import kotlin.math.roundToInt
 
