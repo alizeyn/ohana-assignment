@@ -22,7 +22,9 @@ import at.interview.ohanaassignment.ui.theme.OhanaAssignmentTheme
 import at.interview.ohanaassignment.usage.ui.component.RoundedCornerIconButton
 import at.interview.ohanaassignment.usage.ui.component.Separator
 import at.interview.ohanaassignment.usage.ui.screen.Usage
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

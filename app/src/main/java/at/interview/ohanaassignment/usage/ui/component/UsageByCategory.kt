@@ -17,6 +17,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import at.interview.ohanaassignment.ui.theme.Typography
 import at.interview.ohanaassignment.usage.domain.CategoryUsage
 import at.interview.ohanaassignment.usage.domain.UsageViewModel
@@ -24,8 +25,9 @@ import kotlin.math.roundToInt
 
 @Composable
 fun UsageByCategory(modifier: Modifier = Modifier) {
-    //TODO initiate by hilt
-    val viewModel = UsageViewModel()
+
+    val viewModel = hiltViewModel<UsageViewModel>()
+
     Column(modifier = modifier) {
 
         Text(
@@ -45,8 +47,8 @@ fun UsageByCategory(modifier: Modifier = Modifier) {
 
 @Composable
 fun CategoriesUsages(modifier: Modifier = Modifier, numberOfItemsWhenCollapsed: Int = 5) {
-    //TODO initiate by hilt
-    val viewModel = UsageViewModel()
+
+    val viewModel = hiltViewModel<UsageViewModel>()
 
     val showAll = remember { mutableStateOf(false) }
 
