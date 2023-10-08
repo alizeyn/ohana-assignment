@@ -51,7 +51,6 @@ fun CategoryUsageItem(modifier: Modifier = Modifier, item: CategoryUsage) {
     }
 }
 
-
 @Composable
 fun CategoryColorIcon(modifier: Modifier = Modifier, color: Color) {
     Box(
